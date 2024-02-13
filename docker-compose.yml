@@ -12,7 +12,7 @@ services:
         volumes:
             - ./www/public:/app/public
             - ./_certs:/certs
-            - ./web_caddyfile:/etc/caddy/Caddyfile
+            - ./www_caddyfile:/etc/caddy/Caddyfile
         ports:
             - 443:443
         image: dunglas/frankenphp
