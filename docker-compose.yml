@@ -1,0 +1,18 @@
+version: "3"
+services:
+    api:
+        ports:
+            - 8443:443
+        volumes:
+            - ./api:/app
+            - ./_certs:/certs
+            - ./api_caddyfile:/etc/caddy/Caddyfile
+        image: dunglas/frankenphp
+    www:
+        volumes:
+            - ./www/public:/app/public
+            - ./_certs:/certs
+            - ./web_caddyfile:/etc/caddy/Caddyfile
+        ports:
+            - 443:443
+        image: dunglas/frankenphp
